@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Coin-flip game</h1>
+
+    <script>
+      const randNumber = Math.random();
+      let result = randNumber < 1 / 2 ? "Heads" : "Tails";
+
+      let guess = prompt('Guess "Heads" or "Tails".');
+
+      guess === result ? console.log("You win!") : console.log("You lose!");
+    </script>
+  </body>
+</html>
