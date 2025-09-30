@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.button {
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin: 8px;
+  background-color: rgb(51, 51, 51);
+}
+
+.btn-operator {
+  background-color: rgb(254, 160, 10);
+}

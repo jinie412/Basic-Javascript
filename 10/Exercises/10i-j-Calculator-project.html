@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="10i-j-Calculator-project.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <p class="input"></p>
+    <div>
+      <div>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          1
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          2
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          3
+        </button>
+        <button
+          class="button btn-operator"
+          onclick="clickedButton(event, 'btn-operator')"
+        >
+          +
+        </button>
+      </div>
+      <div>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          4
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          5
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          6
+        </button>
+        <button
+          class="button btn-operator"
+          onclick="clickedButton(event, 'btn-operator')"
+        >
+          -
+        </button>
+      </div>
+      <div>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          7
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          8
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          9
+        </button>
+        <button
+          class="button btn-operator"
+          onclick="clickedButton(event, 'btn-operator')"
+        >
+          *
+        </button>
+      </div>
+      <div>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          0
+        </button>
+        <button class="button" onclick="clickedButton(event, 'btn-number')">
+          .
+        </button>
+        <button
+          class="button"
+          onclick="// Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        let result = eval(calculation);
+        console.log(result);
+
+        // Display the calculation on the page
+        // instead of console.log
+        document.querySelector('.input').innerText = result;
+
+        localStorage.setItem('calculation', result);"
+        >
+          =
+        </button>
+        <button
+          class="button btn-operator"
+          onclick="clickedButton(event, 'btn-operator')"
+        >
+          /
+        </button>
+      </div>
+      <div>
+        <button
+          class="button"
+          onclick="document.querySelector('.input').innerText = ''
+          localStorage.setItem('calculation', '');"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+    <script src="10i-j-Calculator-project.js"></script>
+  </body>
+</html>
