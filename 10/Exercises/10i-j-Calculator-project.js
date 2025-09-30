@@ -1,4 +1,7 @@
 let calculation = localStorage.getItem("calculation") || "";
+if (calculation) {
+  document.querySelector(".input").innerText = calculation;
+}
 
 function clickedButton(e, type) {
   const buttonName = e.target.innerText;
