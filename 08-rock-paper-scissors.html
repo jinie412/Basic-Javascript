@@ -9,16 +9,12 @@
     <button onclick="showTheResult('rock')">Rock</button>
     <button onclick="showTheResult('paper')">Paper</button>
     <button onclick="showTheResult('scissors')">Scissors</button>
-    <p class="p-result"></p>
-    <p class="p-move"></p>
-    <p class="p-score"></p>
     <button
       onclick="
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
         localStorage.removeItem('score');
-        updateTheScoreElement();
       "
     >
       Reset Score
@@ -40,7 +36,6 @@
       wins: 0,
       losses: 0,
     };
-
     // if (!score) {
     //   //score === null
     //   score = {
@@ -87,14 +82,10 @@
 
       updateTheScore();
       localStorage.setItem("score", JSON.stringify(score));
-
-      document.querySelector(".p-result").innerText = result;
-      document.querySelector(".p-move").innerText =
-        `You ${user} - ${computer} Computer`;
-    };
-    updateTheScoreElement = () => {
-      document.querySelector(".p-score").innerText =
-        `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      alert(
+        `You picked ${user}. Computer picked ${computer}. ${result}.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`,
+      );
     };
 
     updateTheScore = () => {
@@ -105,7 +96,6 @@
       } else {
         score.losses += 1;
       }
-      updateTheScoreElement();
     };
   </script>
 </html>

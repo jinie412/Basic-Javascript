@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function countPositive(nums) {
+        ans = 0;
+        nums.forEach((element) => {
+          if (element >= 0) {
+            ans += 1;
+          }
+        });
+        console.log(ans);
+      }
+
+      countPositive([-2, 3, -5, 7, 10]);
+
+      function addNum(array, num) {
+        newArray = array.map((value) => value + num);
+        console.log(newArray);
+      }
+      addNum([1, 2, 3], 2);
+
+      function removeEgg1(foods) {
+        return foods.filter((value) => value !== "egg");
+      }
+
+      console.log(removeEgg1(["egg", "apple", "egg", "ham", "egg"]));
+
+      function removeEgg2(foods) {
+        let cnt = 0;
+        return foods.filter((value) => {
+          if (value === "egg" && cnt < 2) {
+            cnt++;
+            return false;
+          }
+          return true;
+        });
+      }
+
+      console.log(removeEgg2(["egg", "apple", "egg", "ham", "egg"]));
+    </script>
+  </body>
+</html>

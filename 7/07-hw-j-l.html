@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables Exercises</title>
+  </head>
+  <body>
+    <h1>Cart Quantity</h1>
+    <button onclick="console.log(`Cart quantity: ${quantity}`)">
+      Show Quantity
+    </button>
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button
+      onclick="
+        quantity = 0;
+        console.log('Cart was reset.');
+        showQuantity();
+      "
+    >
+      Reset Cart
+    </button>
+    <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
+    <script>
+      let quantity = 0;
+
+      showQuantity = () => {
+        console.log(`Cart quantity: ${quantity}`);
+      };
+
+      updateCartQuantity = (param) => {
+        if (quantity > 10 || quantity + param > 10) {
+          alert("The cart is full.");
+          return;
+        } else if (quantity < 0 || quantity + param < 0) {
+          alert("Not enough items in the cart.");
+          return;
+        }
+        quantity += param;
+        showQuantity();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button class="start-btn" onclick="start()">Start</button>
+    </div>
+    <div>
+      <button class="add-btn" onclick="addToCart()">Add to cart</button>
+      <p class="js-message"></p>
+    </div>
+    <script>
+      const add = function () {
+        console.log(2 + 3);
+      };
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+      runTwice(add);
+      function start() {
+        let data = document.querySelector(".start-btn");
+        data.innerHTML = "Loading...";
+        setTimeout(function () {
+          data.innerHTML = "Finished";
+        }, 1000);
+      }
+
+      function addToCart() {
+        let mes = document.querySelector(".js-message");
+        mes.innerHTML = "Added";
+        setTimeout(function () {
+          mes.innerHTML = "";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables Exercises</title>
+  </head>
+  <body>
+    <h1>Cart Quantity</h1>
+    <button onclick="showQuantity()">Show Quantity</button>
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button
+      onclick="
+        quantity = 0;
+        console.log('Cart was reset.');
+        localStorage.removeItem('quantityLC');
+        showQuantity();
+      "
+    >
+      Reset Cart
+    </button>
+    <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
+    <p class="js-quantity"></p>
+    <script>
+      let quantity = Number(localStorage.getItem("quantityLC"));
+      const showQuantity = () => {
+        document.querySelector(".js-quantity").innerHTML =
+          `Cart quantity: ${quantity}`;
+      };
+      showQuantity();
+
+      updateCartQuantity = (param) => {
+        if (quantity + param > 10) {
+          alert("The cart is full.");
+          return;
+        } else if (quantity + param < 0) {
+          alert("Not enough items in the cart.");
+          return;
+        }
+        quantity += param;
+        showQuantity();
+        localStorage.setItem("quantityLC", quantity);
+      };
+    </script>
+  </body>
+</html>
